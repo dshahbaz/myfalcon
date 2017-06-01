@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package firmware_keys;
+
+import "firmware/proto/hid.proto";
+
+// Button layout: Looking at the top of the Max Falcon-8:
+//
+// | 1 | 2 | 3 | 4 |
+// |---|---|---|---|
+// | 5 | 6 | 7 | 8 |
+
+// The list below is gleaned from
+// http://blog.mateusz.perlak.com/index.php/2016/12/05/max-falcon-8-keyboard-hacking/
+enum Modifiers {
+  NoModifier = 0;
+
+  LCtr = 0x01;
+  LShi = 0x02;
+  LAlt = 0x03;
+  LWin = 0x04;
+  RCtr = 0x05;
+  RShi = 0x06;
+  RAlt = 0x07;
+  RWin = 0x08;
+  RWin_RSHi = 0x09;
+  RWin_RCtr = 0x0A;
+  RWin_RAlt = 0x0B;
+  RWin_RCtr_RShi = 0x0C;
+  RCtr_RAlt = 0x0D;
+  RCtr_RShi = 0x0E;
+  RAlt_RShi = 0x0F;
+  RAlt_RCtr_Rshi = 0x10;
+}
+
+// enum CommonKeys {
+//   Moved directly to hid.proto:HIDKeyboardKey.
+// }
+
+message ProgramSet {
+  // Exactly one of the Modifiers enum above. The default is 0 which is no
+  // modifiers.
+  Modifiers modifier = 1;
+
+  // Between 0 and 30 ms. The default value is 0.
+  uint32 milliseconds_between_keys = 2;
+
+  // Maximum of 6 keys per program set. Although this is a `bytes` type, it
+  // should be of maximum length 6. See firmware-format.md.
+  repeated HIDKeyboardKey keys = 3;
+
+  // TODO: Could possibly add a 'string' here as well. Leaving it off for now.
+}
+
+message Program {
+  // Programs can contain up to 100 ProgramSet messages.
+  // See firmware-format.md.
+  repeated ProgramSet program_set = 1;
+}
+
+message ButtonBinding {
+  // A button binding can consist of either a "normal" key, or a Program.
+  oneof binding { 
+    // Although this is a `bytes` type, it should be of length 1 always.
+    // See ../../firmware-format.md.
+    HIDKeyboardKey key = 1;
+    string string = 2;
+    Program program = 3;
+  }
+}
+
+// The important bits.
+message ButtonBindings {
+  ButtonBinding button1 = 1;
+  ButtonBinding button2 = 2;
+  ButtonBinding button3 = 3;
+  ButtonBinding button4 = 4;
+  ButtonBinding button5 = 5;
+  ButtonBinding button6 = 6;
+  ButtonBinding button7 = 7;
+  ButtonBinding button8 = 8;
+}

@@ -1,0 +1,282 @@
+// These are copied directly from:
+// https://github.com/benblazak/ergodox-firmware/blob/master/src/lib/usb/usage-page/keyboard.h
+//
+// which are in turn from section 10 of:
+// http://www.usb.org/developers/hidpage/Hut1_12v2.pdf
+//
+// These are defined here to be used as constants in text proto files. NOTE:
+// These have not all been tested!
+
+syntax = "proto3";
+
+package firmware_keys;
+
+enum HIDKeyboardKey {
+  // Allow for duplicate (aliased) enum keys below.
+  option allow_alias = true;
+
+  // enumerations must start with 0. DO NOT USE.
+  NULL = 0x00;
+
+  KEY_ErrorRollOver = 0x01;
+  KEY_POSTFail = 0x02;
+  KEY_ErrorUndefined = 0x03;
+  KEY_a_A = 0x04;
+  KEY_b_B = 0x05;
+  KEY_c_C = 0x06;
+  KEY_d_D = 0x07;
+  KEY_e_E = 0x08;
+  KEY_f_F = 0x09;
+  KEY_g_G = 0x0A;
+  KEY_h_H = 0x0B;
+  KEY_i_I = 0x0C;
+  KEY_j_J = 0x0D;
+  KEY_k_K = 0x0E;
+  KEY_l_L = 0x0F;
+  KEY_m_M = 0x10;
+  KEY_n_N = 0x11;
+  KEY_o_O = 0x12;
+  KEY_p_P = 0x13;
+  KEY_q_Q = 0x14;
+  KEY_r_R = 0x15;
+  KEY_s_S = 0x16;
+  KEY_t_T = 0x17;
+  KEY_u_U = 0x18;
+  KEY_v_V = 0x19;
+  KEY_w_W = 0x1A;
+  KEY_x_X = 0x1B;
+  KEY_y_Y = 0x1C;
+  KEY_z_Z = 0x1D;
+  KEY_1_Exclamation = 0x1E;
+  KEY_2_At = 0x1F;
+  KEY_3_Pound = 0x20;
+  KEY_4_Dollar = 0x21;
+  KEY_5_Percent = 0x22;
+  KEY_6_Caret = 0x23;
+  KEY_7_Ampersand = 0x24;
+  KEY_8_Asterisk = 0x25;
+  KEY_9_LeftParenthesis = 0x26;
+  KEY_0_RightParenthesis = 0x27;
+  KEY_ReturnEnter = 0x28;
+  KEY_Escape = 0x29;
+  KEY_DeleteBackspace = 0x2A;
+  KEY_Tab = 0x2B;
+  KEY_Spacebar = 0x2C;
+  KEY_Dash_Underscore = 0x2D;
+  KEY_Equal_Plus = 0x2E;
+  KEY_LeftBracket_LeftBrace = 0x2F;
+  KEY_RightBracket_RightBrace = 0x30;
+  KEY_Backslash_Pipe = 0x31;
+  KEY_NonUS_Pound_Tilde = 0x32;
+  KEY_Semicolon_Colon = 0x33;
+  KEY_SingleQuote_DoubleQuote = 0x34;
+  KEY_GraveAccent_Tilde = 0x35;
+  KEY_Comma_LessThan = 0x36;
+  KEY_Period_GreaterThan = 0x37;
+  KEY_Slash_Question = 0x38;
+  KEY_CapsLock = 0x39;
+  KEY_F1 = 0x3A;
+  KEY_F2 = 0x3B;
+  KEY_F3 = 0x3C;
+  KEY_F4 = 0x3D;
+  KEY_F5 = 0x3E;
+  KEY_F6 = 0x3F;
+  KEY_F7 = 0x40;
+  KEY_F8 = 0x41;
+  KEY_F9 = 0x42;
+  KEY_F10 = 0x43;
+  KEY_F11 = 0x44;
+  KEY_F12 = 0x45;
+  KEY_PrintScreen = 0x46;
+  KEY_ScrollLock = 0x47;
+  KEY_Pause = 0x48;
+  KEY_Insert = 0x49;
+  KEY_Home = 0x4A;
+  KEY_PageUp = 0x4B;
+  KEY_DeleteForward = 0x4C;
+  KEY_End = 0x4D;
+  KEY_PageDown = 0x4E;
+  KEY_RightArrow = 0x4F;
+  KEY_LeftArrow = 0x50;
+  KEY_DownArrow = 0x51;
+  KEY_UpArrow = 0x52;
+  KEYPAD_NumLock_Clear = 0x53;
+  KEYPAD_Slash = 0x54;
+  KEYPAD_Asterisk = 0x55;
+  KEYPAD_Minus = 0x56;
+  KEYPAD_Plus = 0x57;
+  KEYPAD_ENTER = 0x58;
+  KEYPAD_1_End = 0x59;
+  KEYPAD_2_DownArrow = 0x5A;
+  KEYPAD_3_PageDown = 0x5B;
+  KEYPAD_4_LeftArrow = 0x5C;
+  KEYPAD_5 = 0x5D;
+  KEYPAD_6_RightArrow = 0x5E;
+  KEYPAD_7_Home = 0x5F;
+  KEYPAD_8_UpArrow = 0x60;
+  KEYPAD_9_PageUp = 0x61;
+  KEYPAD_0_Insert = 0x62;
+  KEYPAD_Period_Delete = 0x63;
+  KEY_NonUS_Backslash_Pipe = 0x64;
+  KEY_Application = 0x65;
+  KEY_Power = 0x66;
+  KEYPAD_Equal = 0x67;
+  KEY_F13 = 0x68;
+  KEY_F14 = 0x69;
+  KEY_F15 = 0x6A;
+  KEY_F16 = 0x6B;
+  KEY_F17 = 0x6C;
+  KEY_F18 = 0x6D;
+  KEY_F19 = 0x6E;
+  KEY_F20 = 0x6F;
+  KEY_F21 = 0x70;
+  KEY_F22 = 0x71;
+  KEY_F23 = 0x72;
+  KEY_F24 = 0x73;
+  KEY_Execute = 0x74;
+  KEY_Help = 0x75;
+  KEY_Menu = 0x76;
+  KEY_Select = 0x77;
+  KEY_Stop = 0x78;
+  KEY_Again = 0x79;
+  KEY_Undo = 0x7A;
+  KEY_Cut = 0x7B;
+  KEY_Copy = 0x7C;
+  KEY_Paste = 0x7D;
+  KEY_Find = 0x7E;
+  KEY_Mute = 0x7F;
+  KEY_VolumeUp = 0x80;
+  KEY_VolumeDown = 0x81;
+  KEY_LockingCapsLock = 0x82;
+  KEY_LockingNumLock = 0x83;
+  KEY_LockingScrollLock = 0x84;
+  KEYPAD_Comma = 0x85;
+  KEYPAD_EqualSign = 0x86;
+  KEY_International1 = 0x87;
+  KEY_International2 = 0x88;
+  KEY_International3 = 0x89;
+  KEY_International4 = 0x8A;
+  KEY_International5 = 0x8B;
+  KEY_International6 = 0x8C;
+  KEY_International7 = 0x8D;
+  KEY_International8 = 0x8E;
+  KEY_International9 = 0x8F;
+  KEY_LANG1 = 0x90;
+  KEY_LANG2 = 0x91;
+  KEY_LANG3 = 0x92;
+  KEY_LANG4 = 0x93;
+  KEY_LANG5 = 0x94;
+  KEY_LANG6 = 0x95;
+  KEY_LANG7 = 0x96;
+  KEY_LANG8 = 0x97;
+  KEY_LANG9 = 0x98;
+  KEY_AlternateErase = 0x99;
+  KEY_SysReq_Attention = 0x9A;
+  KEY_Cancel = 0x9B;
+  KEY_Clear = 0x9C;
+  KEY_Prior = 0x9D;
+  KEY_Return = 0x9E;
+  KEY_Separator = 0x9F;
+  KEY_Out = 0xA0;
+  KEY_Oper = 0xA1;
+  KEY_Clear_Again = 0xA2;
+  KEY_CrSel_Props = 0xA3;
+  KEY_ExSel = 0xA4;
+
+//      (Reserved)            0xA5..0xAF  // -  -   -     -
+
+  KEYPAD_00 = 0xB0;
+  KEYPAD_000 = 0xB1;
+  KEY_ThousandsSeparator = 0xB2;
+  KEY_DecimalSeparator = 0xB3;
+  KEY_CurrencyUnit = 0xB4;
+  KEY_CurrencySubunit = 0xB5;
+  KEYPAD_LeftParenthesis = 0xB6;
+  KEYPAD_RightParenthesis = 0xB7;
+  KEYPAD_LeftBrace = 0xB8;
+  KEYPAD_RightBrace = 0xB9;
+  KEYPAD_Tab = 0xBA;
+  KEYPAD_Backspace = 0xBB;
+  KEYPAD_A = 0xBC;
+  KEYPAD_B = 0xBD;
+  KEYPAD_C = 0xBE;
+  KEYPAD_D = 0xBF;
+  KEYPAD_E = 0xC0;
+  KEYPAD_F = 0xC1;
+  KEYPAD_XOR = 0xC2;
+  KEYPAD_Caret = 0xC3;
+  KEYPAD_Percent = 0xC4;
+  KEYPAD_LessThan = 0xC5;
+  KEYPAD_GreaterThan = 0xC6;
+  KEYPAD_Ampersand = 0xC7;
+  KEYPAD_AmpersandAmpersand = 0xC8;
+  KEYPAD_Pipe = 0xC9;
+  KEYPAD_PipePipe = 0xCA;
+  KEYPAD_Colon = 0xCB;
+  KEYPAD_Pound = 0xCC;
+  KEYPAD_Space = 0xCD;
+  KEYPAD_At = 0xCE;
+  KEYPAD_Exclamation = 0xCF;
+  KEYPAD_MemoryStore = 0xD0;
+  KEYPAD_MemoryRecall = 0xD1;
+  KEYPAD_MemoryClear = 0xD2;
+  KEYPAD_MemoryAdd = 0xD3;
+  KEYPAD_MemorySubtract = 0xD4;
+  KEYPAD_MemoryMultiply = 0xD5;
+  KEYPAD_MemoryDivide = 0xD6;
+  KEYPAD_PlusMinus = 0xD7;
+  KEYPAD_Clear = 0xD8;
+  KEYPAD_ClearEntry = 0xD9;
+  KEYPAD_Binary = 0xDA;
+  KEYPAD_Octal = 0xDB;
+  KEYPAD_Decimal = 0xDC;
+  KEYPAD_Hexadecimal = 0xDD;
+
+//     (Reserved)             0xDE..0xDF  // -  -   -     -
+
+  KEY_LeftControl = 0xE0;
+  KEY_LeftShift = 0xE1;
+  KEY_LeftAlt = 0xE2;
+  KEY_LeftGUI = 0xE3;
+  KEY_RightControl = 0xE4;
+  KEY_RightShift = 0xE5;
+  KEY_RightAlt = 0xE6;
+  KEY_RightGUI = 0xE7;
+
+//     (Reserved)           0xE8..0xFFFF  // -  -   -     -
+// Media key codes are not real scan codes, they must be translated to a 16
+//  bit number by the consumer key key function
+
+  MEDIAKEY_PLAY_PAUSE = 0x00;
+  MEDIAKEY_STOP = 0x01;
+  MEDIAKEY_PREV_TRACK = 0x02;
+  MEDIAKEY_NEXT_TRACK = 0x03;
+  MEDIAKEY_AUDIO_MUTE = 0x04;
+  MEDIAKEY_AUDIO_VOL_UP = 0x05;
+  MEDIAKEY_AUDIO_VOL_DOWN = 0x06;
+
+
+
+
+
+  // NOTE: The following are not technically part of the HID
+  // These are some common keys that are defined as part of the MAX falcon
+  // programmer, so they are reproduced here.
+  Next_track = 0xe9;
+  Previous_track = 0xea;
+  Stop = 0xeb;
+  Play_Pause = 0xec;
+  Mute = 0xed;
+  Vol_Up = 0xee;
+  Vol_Down = 0xef;
+  Media_Select = 0xf0;
+  Mail = 0xf1;
+  Calculator = 0xf2;
+  WWW_Search = 0xf4;
+  WWW_Home = 0xf5;
+  WWW_Back = 0xf6;
+  WWW_Forward = 0xf7;
+  WWW_Stop = 0xf8;
+  WWW_Refresh = 0xf9;
+  WWW_Favorites = 0xfa;
+}

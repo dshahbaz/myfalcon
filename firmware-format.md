@@ -1,14 +1,18 @@
+# Overview
+
+The below details were gleaned from running the Windows-based MAX-Falcon
+programmer (a bunch of times) and comparing the resulting `firmware.bin` with
+the original unmodified `.bin`.
+
 # Keys
 
 ## Diagram
 
 Looking at the top of the Max Falcon-8:
 
-+----+----+----+----+
-| 1  | 2  | 3  | 4  |
-+-------------------+
-| 5  | 6  | 7  | 8  |
-+----+----+----+----+
+| 1 | 2 | 3 | 4 |
+|---|---|---|---|
+| 5 | 6 | 7 | 8 |
 
 ## Firmware locations
 
@@ -23,7 +27,7 @@ These are the offsets into `firmware.bin` where the keys are programmed.
 7: 0x517a
 8: 0x514a
 
-## Values
+## Key values
 
 For the authoritative key codes list that the Max Falcon-8 appears to use, see:
 
@@ -60,31 +64,74 @@ WWW Favorites: 0xfa
 
 # Programs
 
+Programs can contain up to 100 program sets. Since program sets are 8 bytes (see
+below), this makes a total of 800 bytes per program. Programs are zero-padded?? XXX
+
+## Program set format
+
+Each program set occupies 8 bytes, which are:
+
+program set offset + 0x00: Modifier(s) (see below)
+program set offset + 0x01: Number of milliseconds between keys (0.0 - 3.0 / 0x00 - 0x1e)
+program set offset + 0x02: First key
+program set offset + 0x03: Second key
+program set offset + 0x04: Third key
+program set offset + 0x05: Fourth key
+program set offset + 0x06: Fifth key
+program set offset + 0x07: Sixth key
+
 ## Firmware locations
 
-### Prog1
+Each program set occupies 8 bytes, with a maximum of 100 program sets per
+program, for a total of 800 bytes. The offsets below are for the start of the
+program.
 
-Start location: 0x539c
+Program 1 location: 0x539c
 set 1 location: 0x539c
 set 2 location: 0x53a4
 set 3 location: 0x53ac
 ...
-set 100 location: 0x56b4  <- (0x539c + 800 - 8)
+set 100 location: 0x56b4  ( == 0x539c + 800 - 8)
 
-## Program Set format
+Program 2 location: 0x56bc
+set 1 location: 0x56bc
+...
+set 100 location: 0x59d4  ( == 0x56bc + 800 - 8)
 
-prog start + set offset + 0x00: Modifier(s) (see below)
-prog start + set offset + 0x01: Number of milliseconds (0.0 - 3.0 / 0x00 - 0x1e)
-prog start + set offset + 0x02: First key
-prog start + set offset + 0x03: Second key
-prog start + set offset + 0x04: Third key
-prog start + set offset + 0x05: Fourth key
-prog start + set offset + 0x06: Fifth key
-prog start + set offset + 0x07: Sixth key
+Program 3 location: 0x59dc 
+set 1 location: 0x59dc
+...
+set 100 location: 0x5cf4 ( == 0x59dc + 800 - 8)
+
+Program 4 location: 0x5cfc 
+set 1 location: 0x5cfc
+...
+set 100 location: 0x600c ( == 0x5cfc + 800 - 8)
+
+Program 5 location: 0x601c 
+set 1 location: 0x601c
+...
+set 100 location: 0x6334 ( == 0x601c + 800 - 8)
+
+Program 6 location: 0x633c 
+set 1 location: 0x633c
+...
+set 100 location: 0x6654 ( == 0x633c + 800 - 8)
+
+Program 7 location: 0x665c 
+set 1 location: 0x665c
+...
+set 100 location: 0x6974 ( == 0x665c + 800 - 8)
+
+Program 8 location: 0x697c 
+set 1 location: 0x697c
+...
+set 100 location: 0x6c94 ( == 0x697c + 800 - 8)
 
 ### Modifiers
 
-The list below is gleened from <http://blog.mateusz.perlak.com/index.php/2016/12/05/max-falcon-8-keyboard-hacking/>
+The list below is gleaned from
+<http://blog.mateusz.perlak.com/index.php/2016/12/05/max-falcon-8-keyboard-hacking/>
 
 * LCtr = 0x01
 * LShi = 0x02
@@ -102,5 +149,4 @@ The list below is gleened from <http://blog.mateusz.perlak.com/index.php/2016/12
 * RCtr+RShi = 0x0E
 * RAlt+RShi = 0x0F
 * RAlt+RCtr+Rshi = 0x10
-
 

@@ -1,0 +1,110 @@
+# Looking at the top of the Max Falcon-8:
+#
+# | 1 | 2 | 3 | 4 |
+# |---|---|---|---|
+# | 5 | 6 | 7 | 8 |
+#
+# For full list of possible `key` values, see ../proto/hid.proto.
+# For full list of possible `modifier` values, see ../proto/firmware_keys.proto.
+
+button1 {
+  # key: KEY_a_A
+  # Equivalently:
+  string: 'a'
+}
+
+button2 {
+  # key: KEY_b_B
+  string: 'b'
+}
+
+button3 {
+  program {
+    # Working:
+    #program_set {
+      #modifier: LAlt
+      #milliseconds_between_keys: 2
+      #keys: [KEY_Tab]
+    #}
+
+    # Working: 'HELO'
+    #program_set {
+      #modifier: LShi
+      #keys: [KEY_h_H, KEY_e_E, KEY_l_L, KEY_l_L, KEY_o_O]
+    #}
+
+    # Working: ctrl-alt-delete
+    #program_set {
+      #modifier: RCtr_RAlt
+      #keys: [KEY_DeleteForward]
+    #}
+
+    # Working: ctrl-d
+    program_set {
+      modifier: LCtr
+      keys: [KEY_d_D]
+    }
+
+  }
+}
+
+button4 {
+  # Types "HELLO friend"
+  program {
+    program_set {
+      modifier: LShi
+      milliseconds_between_keys: 3  # Between 0 and 30 milliseconds.
+      keys: [KEY_h_H]
+    }
+
+    program_set {
+      modifier: LShi
+      milliseconds_between_keys: 3
+      keys: [KEY_e_E]
+    }
+
+    program_set {
+      modifier: LShi
+      milliseconds_between_keys: 3
+      keys: [KEY_l_L]
+    }
+
+    program_set {
+      modifier: LShi
+      milliseconds_between_keys: 3
+      keys: [KEY_l_L]
+    }
+
+    program_set {
+      modifier: LShi
+      milliseconds_between_keys: 3
+      keys: [KEY_o_O]
+    }
+
+    program_set {
+      milliseconds_between_keys: 3
+      keys: [KEY_Spacebar]
+    }
+
+    program_set {
+      milliseconds_between_keys: 3  # Between 0 and 30 milliseconds.
+      keys: [KEY_f_F, KEY_r_R, KEY_i_I, KEY_e_E, KEY_n_N, KEY_d_D]
+    }
+  }
+}
+
+button5 {
+  string: 'e'
+}
+
+button6 {
+  string: 'f'
+}
+
+button7 {
+  key: KEY_VolumeUp  # Vol_Up also works.
+}
+
+button8 {
+  key: Vol_Down  # Alternatively, KEY_VolumeDown works.
+}
