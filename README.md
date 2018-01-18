@@ -8,8 +8,8 @@ emulates what the official programmer does.
 
 ## WARNING
 
-THERE ARE NO CLAIMS BEING MADE AS TO WHETHER OR NOT THIS WILL DAMAGE YOUR
-KEYBOARD. This tool is provided as-is.
+**THERE ARE NO CLAIMS BEING MADE AS TO WHETHER OR NOT THIS WILL DAMAGE YOUR
+KEYBOARD. This tool is provided as-is.**
 
 That said, I have been using this extensively during development/testing, and
 have not damaged the keyboard. If you have a Windows machine with the [official
