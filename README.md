@@ -239,7 +239,7 @@ http://semver.org/
 
 ## Authors
 
-* **Dimi Shahbaz** - *Initial work* - [TODO](https://github.com/TODO)
+* **Dimi Shahbaz** - *Initial work* - [dshahbaz](https://github.com/dshahbaz)
 
 ## License
 
