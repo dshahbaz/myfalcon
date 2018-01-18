@@ -249,4 +249,5 @@ http://semver.org/
 
 * Mateusz Perlak, initial efforts into this idea (http://blog.mateusz.perlak.com/index.php/2016/12/05/max-falcon-8-keyboard-hacking/)
 * Ergodox Firmware, USB HID constants (https://github.com/benblazak/ergodox-firmware)
+* The fine folks at http://www.maxkeyboard.com!
 
