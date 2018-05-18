@@ -23,6 +23,8 @@ IF YOU JUST WANT A BINARY TO RUN, see:
 
 *TODO: DOWNLOAD LINKS*
 
+Otherwise, see [Building](building).
+
 ### Defining a layout
 
 Firmware definitions are written in protocol buffer *text format* (`.textpb`).
@@ -185,7 +187,8 @@ main -text_proto my_new_layout.textpb -firmware_bin_path /path/to/firmware.bin
 
 where `/path/to/firmware.bin` varies depending on OS and where the keyboard gets
 mounted. For example, on linux, I usually see this file mounted under
-`/media/$USER/CRP\ DISABLD/firmware.bin`. There's a lot of variability on this,
+`/media/$USER/CRP\ DISABLD/firmware.bin`. On OSX, this is
+`/Volumes/CRP\ DISABLD/firmware.bin`. There's a lot of variability on this,
 though, so don't just cut and paste. After plugging in the keyboard, you need to
 find this yourself by running e.g. `mount` and seeing what looks promising.
 
@@ -195,6 +198,8 @@ Now put the keyboard back into normal (non-programmable) mode (again see the
 video for how this is done). Try your new layout!
 
 ## Building
+
+#building
 
 This section is only for those wishing to hack on this. It's NOT required for
 running (see *Getting Started*).
@@ -211,6 +216,8 @@ You need:
 ```
 bazel build //firmware:main
 ```
+
+Your binaries end up in `bazel-bin`.
 
 ### Running the tests
 
