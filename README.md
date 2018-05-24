@@ -21,9 +21,7 @@ video](https://www.youtube.com/watch?v=IpYg5A78-hs) to reset your keyboard.
 
 ## Getting Started
 
-IF YOU JUST WANT A BINARY TO RUN, see:
-
-*TODO: DOWNLOAD LINKS*
+IF YOU JUST WANT A BINARY TO RUN, see [releases](releases).
 
 Otherwise, see [Building](#building).
 
