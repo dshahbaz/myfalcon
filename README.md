@@ -25,7 +25,7 @@ IF YOU JUST WANT A BINARY TO RUN, see:
 
 *TODO: DOWNLOAD LINKS*
 
-Otherwise, see [Building](building).
+Otherwise, see [Building](#building).
 
 ### Defining a layout
 
