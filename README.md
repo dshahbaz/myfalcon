@@ -199,9 +199,7 @@ find this yourself by running e.g. `mount` and seeing what looks promising.
 Now put the keyboard back into normal (non-programmable) mode (again see the
 video for how this is done). Try your new layout!
 
-## Building
-
-#building
+## [Building](#building)
 
 This section is only for those wishing to hack on this. It's NOT required for
 running (see *Getting Started*).
