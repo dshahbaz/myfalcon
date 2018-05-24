@@ -1,7 +1,6 @@
 # Adapted from https://github.com/korfuri/bazel-travis/blob/master/.travis.yml
 
 dist: trusty
-language: go
 addons:
   apt:
     sources:
