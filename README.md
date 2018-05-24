@@ -6,6 +6,8 @@ The programmer supplied by the fine folks at MAX is Windows only, and while it
 does work under Wine on linux and OSX, it's a bit... clunky. This project
 emulates what the official programmer does.
 
+[![Build Status](https://travis-ci.org/dshahbaz/myfalcon.svg?branch=master)](https://travis-ci.org/dshahbaz/myfalcon)
+
 ## WARNING
 
 **THERE ARE NO CLAIMS BEING MADE AS TO WHETHER OR NOT THIS WILL DAMAGE YOUR
