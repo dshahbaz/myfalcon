@@ -176,13 +176,13 @@ Assuming you've saved your layout from *Defining a layout* in
 running:
 
 ```
-main -text_proto my_new_layout.textpb -verify_only
+myfalcon -text_proto my_new_layout.textpb -verify_only
 ```
 
 Now to write the firmware:
 
 ```
-main -text_proto my_new_layout.textpb -firmware_bin_path /path/to/firmware.bin
+myfalcon -text_proto my_new_layout.textpb -firmware_bin_path /path/to/firmware.bin
 ```
 
 where `/path/to/firmware.bin` varies depending on OS and where the keyboard gets
@@ -214,7 +214,7 @@ You need:
 ### Building the firmware programmer
 
 ```
-bazel build //firmware:main
+bazel build //firmware:myfalcon
 ```
 
 Your binaries end up in `bazel-bin`.
