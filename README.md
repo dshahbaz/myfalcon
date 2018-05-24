@@ -1,6 +1,9 @@
-# MAX Falcon Programmer
+# MAX Falcon 8 Programmer
 
-A cross-platform, CLI firmware programmer for the [MAX Falcon-8 custom programmable keyboard](http://www.maxkeyboard.com/max-falcon-8-custom-programmable-mini-macropad-mechanical-keyboard-assembled.html), a handy little 8 key keyboard made by MAX.
+A cross-platform, CLI firmware programmer for the [MAX Falcon-8 custom programmable keyboard](http://www.maxkeyboard.com/max-falcon-8-custom-programmable-mini-macropad-mechanical-keyboard-assembled.html),
+a handy little 8 key keyboard made by MAX. **Note** that this is NOT the newer
+MAX Falcon 8 *RGB* model
+(http://www.maxkeyboard.com/max-falcon-8-rgb-custom-programmable-mini-macropad-mechanical-keyboard-assembled.html).
 
 The programmer supplied by the fine folks at MAX is Windows only, and while it
 does work under Wine on linux and OSX, it's a bit... clunky. This project
@@ -21,9 +24,13 @@ video](https://www.youtube.com/watch?v=IpYg5A78-hs) to reset your keyboard.
 
 ## Getting Started
 
-IF YOU JUST WANT A BINARY TO RUN, see [releases](https://github.com/dshahbaz/myfalcon/releases).
+IF YOU JUST WANT TO RUN IT, see
+[releases](https://github.com/dshahbaz/myfalcon/releases) for downloads. Note
+that the linux and osx binaries have been tested. I have not tested the windows
+binaries, so if you do, please drop a note at
+https://github.com/dshahbaz/myfalcon/issues/1
 
-Otherwise, see [Building](#building).
+For building, see [Building](#building).
 
 ### Defining a layout
 

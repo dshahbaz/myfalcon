@@ -102,7 +102,7 @@ button6 {
 }
 
 button7 {
-  key: KEY_VolumeUp  # Vol_Up also works.
+  key: Vol_Up  # Vol_Up also works.
 }
 
 button8 {
