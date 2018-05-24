@@ -244,6 +244,8 @@ http://semver.org/
 
 Happens through travis-ci. See `.travis.yml`
 
+https://travis-ci.org/dshahbaz/myfalcon
+
 ## Authors
 
 * **Dimi Shahbaz** - *Initial work* - [dshahbaz](https://github.com/dshahbaz)
