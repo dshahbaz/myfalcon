@@ -225,10 +225,6 @@ Your binaries end up in `bazel-bin`.
 bazel test ...
 ```
 
-## Deployment
-
-TODO
-
 ## Built With
 
 * https://github.com/bazelbuild/rules_go - golang build rules
@@ -243,6 +239,10 @@ Pull requests welcome.
 ## Versioning
 
 http://semver.org/
+
+## Deployment
+
+Happens through travis-ci. See `.travis.yml`
 
 ## Authors
 
