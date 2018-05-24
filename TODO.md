@@ -1,6 +1,7 @@
 # TODO
 
-1.   Test on OSX, Windows manually
+1.   ~Test on OSX~
+1.   Test on Windows manually
 1.   Find a way to CI/deploy Linux builds
    * https://github.com/marketplace/travis-ci/
 1.   Find a way to CI/deploy OSX builds
